@@ -123,17 +123,27 @@
                         </div>
 
                         <div class="card-content" id="codecard">
-                            <h2 class="title">Coding Projects 💻</h2>
+                            <h2 class="title" id="codingprojects">Coding Projects 💻</h2>
                             <div id="codecontainer">
                                 <div class="projectcard" onclick="showProjectCard('rv')">
                                     <h2 class="projectname">Recursion Visualizer</h2>
-                                    <p class="projectdesc">A web application that renders and animates an image using recursion
+                                    <div id="fronttagsview">
+                                        <button class="projecttags" id="fronttag">Elm</button>
+                                        <button class="projecttags" id="fronttag">L-Systems</button>
+                                        <button class="projecttags" id="fronttag">Recursion</button>
+                                    </div>
+                                    <p class="projectdesc">A web application that renders and animates an image using
+                                        recursion
                                         with options to toggle the visibility of different curves drawn.</p>
 
                                 </div>
 
                                 <div class="projectcard" onclick="showProjectCard('cg')">
                                     <h2 class="projectname">Untitled Cooking Game</h2>
+                                    <div id="fronttagsview">
+                                        <button class="projecttags" id="fronttag">Elm</button>
+                                        <button class="projecttags" id="fronttag">Software Dev</button>
+                                    </div>
                                     <p class="projectdesc">Working in a team of 6 to develop an interactive cooking game
                                         to detect early symptoms of Parkinson's Disease in the elderly.</p>
 
@@ -151,8 +161,10 @@
                         <div class="card">
                             <div class="cardheader" id="projectheader">
                                 <div class="windowbuttons" onclick="closeCard('rv')">
-                                    <h1 class="exit">&#10006;</h1>
-<!--                                     <h1 class="minimize">&#128469;</h1> -->
+                                    <button class="windbut" id="minimize"><img src="img/minimize.png" id="minimize"
+                                            class="winbutton"></img></button>
+                                    <button class="windbut" id="exit"><img src="img/exit.png" id="exit"
+                                            class="winbutton"></img></button>
                                 </div>
 
                                 <!-- <div class="windowHeader">
@@ -164,19 +176,20 @@
                             <div class="card-content" id="codecard">
                                 <h2 class="title">Recursion Visualizer</h2>
                                 <div id="tagsview">
-                                    <button id="projecttags">Elm</button>
-                                    <button id="projecttags">L-systems</button>
+                                    <button class="projecttags">Elm</button>
+                                    <button class="projecttags">L-systems</button>
                                     <a id="viewProject"
                                         href="https://stabl.rocks/ShowModulePublish?modulePublishId=1dcde596-1c44-4ed2-8ac7-f2aaf949c82c"
                                         target="_blank">View Project</a>
                                 </div>
-                                <p id="desc">A web application coded in Elm that renders an image using recursion. Curves
+                                <p id="desc">A web application coded in Elm that renders an image using recursion.
+                                    Curves
                                     are drawn using L-systems.</p>
 
 
-
-                                <img src="img/Screenshot 2024-03-02 004530.png" id="image"></img>
-
+                                <div class="images">
+                                    <img src="img/Screenshot 2024-03-14 153327.png" id="image"></img>
+                                </div>
                             </div>
                         </div>
 
@@ -189,8 +202,10 @@
                         <div class="card">
                             <div class="cardheader" id="projectheader">
                                 <div class="windowbuttons" onclick="closeCard('cg')">
-                                    <h1 class="exit">&#10006;</h1>
-<!--                                     <h1 class="minimize">&#128469;</h1> -->
+                                    <button class="windbut" id="minimize"><img src="img/minimize.png" id="minimize"
+                                            class="winbutton"></img></button>
+                                    <button class="windbut" id="exit"><img src="img/exit.png" id="exit"
+                                            class="winbutton"></img></button>
                                 </div>
 
                                 <div class="windowHeader">
@@ -202,8 +217,8 @@
                             <div class="card-content" id="codecard">
                                 <h2 class="title">Untitled Cooking Game</h2>
                                 <div id="tagsview">
-                                    <button id="projecttags">Elm</button>
-                                    <button id="projecttags">Software Dev</button>
+                                    <button class="projecttags">Elm</button>
+                                    <button class="projecttags">Software Dev</button>
                                     <a id="viewProject"
                                         href="https://stabl.rocks/ShowModulePublish?modulePublishId=8370421b-d463-4c9a-ba34-f7fd08e8c6d8"
                                         target="_blank">View Early Prototype</a>
@@ -214,11 +229,12 @@
 
 
 
-
-                                <img src="img/IMG_0405.JPG" id="image" alt="Early Paper Prototypes and UI Design"></img>
-                                <img src="img/Untitled_Artwork.png" id="cgimage"
-                                    alt="Early Paper Prototypes and UI Design"></img>
-
+                                <div class="images">
+                                    <img src="img/IMG_0405.JPG" id="image"
+                                        alt="Early Paper Prototypes and UI Design"></img>
+                                    <img src="img/Untitled_Artwork.png" id="image"
+                                        alt="Early Paper Prototypes and UI Design"></img>
+                                </div>
                             </div>
                         </div>
 
@@ -230,15 +246,15 @@
 
         <section class="icons">
             <button class="sidebar-button" id="about-btn" onclick="openTab('about')">
-                <span class="button-image" id="about-img"><img src="img/appicon.png"></span>
+                <span class="button-image" id="about-img"><img src="img/about.PNG"></span>
                 <span class="button-text">about</span>
             </button>
             <button class="sidebar-button" id="designs-btn" onclick="openTab('designs')">
-                <span class="button-image" id="designs-img"><img src="img/appicon.png"></span>
+                <span class="button-image" id="designs-img"><img src="img/designs.PNG"></span>
                 <span class="button-text">designs</span>
             </button>
             <button class="sidebar-button" id="projects-btn" onclick="openTab('projects')">
-                <span class="button-image" id="projects-img"><img src="img/appicon.png"></span>
+                <span class="button-image" id="projects-img"><img src="img/coding.PNG"></span>
                 <span class="button-text">code</span>
             </button>
         </section>
@@ -248,11 +264,12 @@
     <footer>
         <div class="footer">
             <h3 class="contact" id="keepintouch" onclick="scrollToBottomFunction()">Let's connect!</h3>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/melyho/" target="_blank">linkedin</a></li>
-                <li><a href="mailto:homelissa1@gmail.com" target="_blank">email</a></li>
-                <!-- <li><a href="https://github.com/melyho" target="_blank">github</a></li> -->
-            </ul>
+
+            <div class="footerbuttons">
+                <a href="https://www.linkedin.com/in/melyho/" target="_blank">linkedin</a>
+                <a href="mailto:homelissa1@gmail.com" target="_blank">email</a>
+                <!-- <a href="https://github.com/melyho" target="_blank">github</a>-->
+            </div>
         </div>
     </footer>
     <script src="script.js"></script>
