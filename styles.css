@@ -1006,7 +1006,7 @@ li {
 #viewProject {
 
     border: 3px solid rgba(115, 104, 177, 0);
-    background-color: #ffebf2da;
+    background-color: #ecf7ff;
     color: rgba(69, 67, 83, 0.849);
     padding: 20px;
     font-family: Work Sans;
@@ -1019,7 +1019,7 @@ li {
 }
 
 #viewProject:hover {
-    background-color: #ffe6efda;
+    background-color: rgba(218, 239, 248, 0.658);
     color: rgba(69, 67, 83, 0.877);
     transform: translate(0, -3px);
 }
