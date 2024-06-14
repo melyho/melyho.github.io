@@ -14,6 +14,26 @@
 
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff00; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #f4f0f7;
+    border-radius: 100px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
 #homeWindow {
     position: absolute;
 }
@@ -232,7 +252,7 @@ main {
     height: fit-content;
     max-height: 350px;
     overflow-y: auto;
-    margin-top: 1px;
+    margin-top: 0px;
     padding: 50px;
     padding-right: 60px;
     margin-left: 0px;
@@ -248,8 +268,6 @@ main {
     padding: 2px;
     padding-left: 8px;
     padding-right: 8px;
-    margin-top: -3px;
-    margin-bottom: 10px;
 }
 
 #projectcontainer {
@@ -356,6 +374,10 @@ main {
         margin-top: 0px;
     }
 
+    .modal-image {
+        max-width: 100vw !important;
+        height: auto !important;
+    }
     #card-window {
         width: 70vw;
         margin-left: 2vw;
@@ -404,7 +426,7 @@ main {
         width: 80vw;
         margin-bottom: 0px;
         max-height: 68vh;
-        overflow-y: auto;
+        overflow-y: hidden;
 
     }
 
@@ -458,6 +480,7 @@ main {
         display: flex;
         align-items: center;
         flex-direction: column;
+        overflow-x: hidden;
 
     }
 
@@ -467,6 +490,7 @@ main {
         display: flex;
         align-items: center;
         flex-direction: column;
+        overflow-x: hidden;
 
     }
 
@@ -496,9 +520,10 @@ main {
 
     .projecttags {
         font-size: 0.7em !important;
-        padding: 10px !important;
         padding-top: 3px !important;
         padding-bottom: 3px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 
     #viewProject {
@@ -524,12 +549,11 @@ main {
 
     #fronttagsview {
         justify-content: center !important;
-        gap: 2.5px !important;
     }
     
     #tagsview {
         justify-content: center !important;
-        gap: 2.5px !important;
+        gap: 5px !important;
     }
 }
 
@@ -1010,7 +1034,7 @@ a:hover {
     align-items: start;
     background-color: #ffffff;
     border: none;
-    box-shadow: rgba(43, 37, 95, 0.15) 1.95px 1.95px 10px;
+    box-shadow: rgba(73, 73, 73, 0.062) 2px 2px 8px;
     font-family: Work Sans;
 
 }
@@ -1186,9 +1210,61 @@ li {
 #fronttagsview {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 4px;
     justify-content: flex-start;
     margin-left: -2px;
-    row-gap: 1.5px;
+    row-gap: 4px;
+    margin-bottom: 10px;
 
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: #ffffff42;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.089);
+}
+
+.modal-image {
+    max-width: 60vw;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 2vh;
+    right: 4vw;
+    color: rgb(77, 77, 77);
+    font-size: 65px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: 1000;
+    transition: 0.2s;
+
+}
+
+.close:hover{
+    transform: translateY(-3px);
 }
