@@ -44,11 +44,19 @@
 
 <body onload="typeWriter()">
     <header>
-        <button id="homeButton" class="home" onclick="openTab('about')">Melissa Ho</button>
+        <button id="homeButton" class="home" onclick="openTab('about')">melissa's portfolio</button>
     </header>
+
+    <div id="my-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" class="modal-image">
+        </div>
+    </div>
 
     <main>
 
+        
         <section class="window">
 
             <div id="about" class="tabContent">
@@ -56,20 +64,12 @@
 
                     <div class="card">
                         <div class="cardheader">
-                            <div class="windowbuttons">
-                                <!-- <h1 class="exit">&#10006;</h1>
-                                <h1 class="minimize">&#128469;</h1> -->
-                            </div>
-
-                            <!-- <div class="windowHeader">
-                                <h2 class="wName"> about_me </h2>
-                            </div> -->
-
+                        
                         </div>
 
-                        <div class="card-content">
+                        <div class="card-content" id="introcard">
                             <h2 id="hi"></h2>
-                            <p>Hello! I'm currently a second year student studying math and computer science at McMaster University. With a passion for all things coding and design, I'm exploring avenues ranging from UX/UI to full-stack development.</p>
+                            <p>I'm currently a second year student studying math and computer science at McMaster University. With a passion for all things coding and design, I'm exploring avenues ranging from UX/UI to full-stack development. <3</p>
                         </div>
                     </div>
                 </div>
@@ -80,24 +80,77 @@
 
                     <div class="card">
                         <div class="cardheader">
-                            <!-- <div class="windowbuttons" onclick="closeCard('designs')">
-                                <h1 class="exit">&#10006;</h1>
-                                <h1 class="minimize">&#128469;</h1>
-                            </div> -->
-
-                            <!-- <div class="windowHeader">
-                                <h2 class="wName">designs</h2>
-                            </div> -->
-
                         </div>
+                        <div class="card-content" id="designcard">
+                            <h2 class="title" id="codingprojects">Design Projects</h2>
+                            <div id="codecontainer">
+                                <div class="projectcard" onclick="openLinkInNewTab('https://ighackswebsite.github.io/')">
+                                    <h2 class="projectname">Ignition Hacks Website</h2>
+                                    <div id="fronttagsview">
+                                        <button class="projecttags" id="fronttag">Figma</button>
+                                        <button class="projecttags" id="fronttag">Illustrator</button>
+                                        <button class="projecttags" id="fronttag">HTML/CSS</button>
+                                        <button class="projecttags" id="fronttag">UI/UX</button>
+                                    </div>
 
-                        <div class="card-content">
-                            <p>Coming soon, adding new designs! 💗</p>
+                                </div>          
 
+                                <div class="projectcard" data-image="img/newspaper.png" onclick="openModal(this)">
+                                    <h2 class="projectname">Blue and Gold - Logo and Covers</h2>
+                                    <div id="fronttagsview">
+                                        <button class="projecttags" id="fronttag">Illustration</button>
+                                        <button class="projecttags" id="fronttag">Procreate</button>
+                                        
+                                    </div>
+
+                                </div>
+                                
+                                <div class="projectcard" data-image="img/indoor-perspective.jpg" onclick="openModal(this)">
+                                    <h2 class="projectname">Concept Art Sketch 01</h2>
+                                    <div id="fronttagsview">
+                                        <button class="projecttags" id="fronttag">Illustration</button>        
+                                    </div>
+
+                                </div>
+
+                                <div class="projectcard" data-image="img/outdoor-perspective.jpg" onclick="openModal(this)">
+                                    <h2 class="projectname">Concept Art Sketch 02</h2>
+                                    <div id="fronttagsview">
+                                        <button class="projecttags" id="fronttag">Illustration</button> 
+                                        
+                                    </div>
+
+                                </div>  
+
+                            </div>
                         </div>
                     </div>
 
                 </div>
+
+                <div id="blue-gold" style="display: none;">
+                    <div class="card-container">
+
+                        <div class="card" id = "card-window">
+                            <div class="cardheader" id="projectheader">
+                                <div class="windowbuttons" onclick="closeCard('blue-gold')">
+                                    <button class="windbut" id="exit"><img src="img/exit.png" id="exit"
+                                            class="winbutton"></img></button>
+                                </div>
+
+                            </div>
+
+                            <div class="card-content" id="designcard">
+                                
+                                <div class="images">
+                                    <img src="img/newspaper.png" id="d-image"></img>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
             <div id="projects" class="tabContent">
@@ -105,19 +158,10 @@
 
                     <div class="card">
                         <div class="cardheader">
-                            <!-- <div class="windowbuttons">
-                                <h1 class="exit">&#10006;</h1>
-                                <h1 class="minimize">&#128469;</h1>
-                            </div> -->
-
-                            <!-- <div class="windowHeader">
-                                <h2 class="wName">coding_projects</h2>
-                            </div> -->
-
                         </div>
 
                         <div class="card-content" id="codecard">
-                            <h2 class="title" id="codingprojects">Coding Projects !</h2>
+                            <h2 class="title" id="codingprojects">Coding Projects</h2>
                             <div id="codecontainer">
                                 <div class="projectcard" onclick="showProjectCard('rv')">
                                     <h2 class="projectname">Recursion Visualizer</h2>
@@ -130,19 +174,7 @@
                                         recursion
                                         with options to toggle the visibility of different curves drawn.</p>
 
-                                </div>
-
-<!--                                 <div class="projectcard" onclick="showProjectCard('cg')">
-                                    <h2 class="projectname">Untitled Cooking Game</h2>
-                                    <div id="fronttagsview">
-                                        <button class="projecttags" id="fronttag">Elm</button>
-                                        <button class="projecttags" id="fronttag">Software Dev</button>
-                                    </div>
-                                    <p class="projectdesc">Working in a team of 6 to develop an interactive cooking game
-                                        to detect early symptoms of Parkinson's Disease in the elderly.</p>
-
-                                </div> -->
-
+                                </div>                           
                             </div>
                         </div>
 
@@ -152,18 +184,13 @@
                 <div id="rv" style="display: none;">
                     <div class="card-container">
 
-                        <div class="card">
+                        <div class="card" id = "card-window">
                             <div class="cardheader" id="projectheader">
                                 <div class="windowbuttons" onclick="closeCard('rv')">
-                                    <button class="windbut" id="minimize"><img src="img/minimize.png" id="minimize"
-                                            class="winbutton"></img></button>
+                                    
                                     <button class="windbut" id="exit"><img src="img/exit.png" id="exit"
                                             class="winbutton"></img></button>
                                 </div>
-
-                                <!-- <div class="windowHeader">
-                                <h2 class="wName">coding_projects</h2>
-                            </div> -->
 
                             </div>
 
@@ -203,25 +230,9 @@
                                 </div>
 
                                 <div class="windowHeader">
-                                    <!-- <h2 class="wName">view project</h2> -->
                                 </div>
 
                             </div>
-
-                            <div class="card-content" id="codecard">
-                                <h2 class="title">Untitled Cooking Game</h2>
-                                <div id="tagsview">
-                                    <button class="projecttags">Elm</button>
-                                    <button class="projecttags">Software Dev</button>
-                                    <a id="viewProject"
-                                        href="https://stabl.rocks/ShowModulePublish?modulePublishId=8370421b-d463-4c9a-ba34-f7fd08e8c6d8"
-                                        target="_blank">View Early Prototype</a>
-                                </div>
-                                <p id="desc">Developing a game in Elm to detect early symptoms of Parkinson's Disease in
-                                    the elderly. Completing the design and software development process in a team of 6.
-                                </p>
-
-
 
                                 <div class="images">
                                     <img src="img/IMG_0405.JPG" id="image"
@@ -261,7 +272,7 @@
 
             <div class="footerbuttons">
                 <a href="https://www.linkedin.com/in/melyho/" target="_blank">linkedin</a>
-                <a href="mailto:homelissa1@gmail.com" target="_blank">email</a>
+                <a href="https://github.com/melyho" target="_blank">github</a>
                 <!-- <a href="https://github.com/melyho" target="_blank">github</a>-->
             </div>
         </div>

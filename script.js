@@ -58,3 +58,7 @@ function closeCard(cardId) {
   div.style.display = 'none';
   desktop.style.display = "in-block";
 }
+
+function openLinkInNewTab(url) {
+  window.open(url, '_blank');
+}

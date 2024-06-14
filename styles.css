@@ -203,11 +203,6 @@ main {
 
 }
 
-.window {
-    background-color: transparent;
-    display: flex;
-    height: fit-content;
-}
 
 .tabContent {
     display: none;
@@ -228,10 +223,24 @@ main {
     max-height: 350px;
     overflow-y: auto;
     margin-top: 1px;
-    margin-left: 1px;
-    scrollbar-width: none;
     padding: 50px;
     padding-right: 60px;
+    margin-left: 0px;
+}
+
+#designcard {
+    height: fit-content;
+    max-height: 350px;
+    overflow-y: auto;
+    margin-top: 1px;
+    padding: 50px;
+    padding-right: 60px;
+    margin-left: 0px;
+}
+
+#card-window {
+    width: 57vw;
+    margin-left: 2vw;
 }
 
 #fronttag {
@@ -347,9 +356,55 @@ main {
         margin-top: 0px;
     }
 
+    #card-window {
+        width: 70vw;
+        margin-left: 2vw;
+        margin-top: -20px;
+    }
+
+    #introcard {
+        height: fit-content;
+        max-height: 350px;
+        overflow-y: auto;
+        margin-top: 1px;
+        margin-left: 1px;
+        padding: 25px;
+        padding-right: 30px;
+        padding-top: 10px;
+    }
+    
+    .title {
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .projectname {
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    #desc {
+        font-size: 1em !important;
+        font-family: Work Sans;
+        color: #464646;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 1.8;
+        padding-left: 15px;
+        margin-top: 20px;
+        margin-left: 0px;
+    
+    }
+    
+    .projectdesc {
+        display: none;
+    }
+
     .card {
         width: 80vw;
         margin-bottom: 0px;
+        max-height: 68vh;
+        overflow-y: auto;
 
     }
 
@@ -384,6 +439,9 @@ main {
         justify-content: center;
         align-content: center;
         margin-bottom: 20px;
+        background-color: transparent;
+        display: flex;
+        height: 70vh;
     }
 
     .button-image img {
@@ -397,17 +455,27 @@ main {
     #codecard {
         padding: 30px;
         padding-top: 40px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    #designcard {
+        padding: 30px;
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
     }
 
     #codingprojects {
         text-align: center;
         margin-bottom: 0px;
         margin-left: 0px;
+        font-size: 1.5em;
 
-    }
-
-    .projectcard {
-        margin-top: -12px;
     }
 
     .contact {
@@ -418,7 +486,53 @@ main {
         text-align: center;
     }
 
+    #projects{
+        justify-content: center;
+    }
+
+    h2 {
+        font-size: 1.8em
+    }
+
+    .projecttags {
+        font-size: 0.7em !important;
+        padding: 10px !important;
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
+
+    #viewProject {
+        font-size: 0.7em !important;
+        padding: 10px !important;
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
+
+    #viewDesign {
+        font-size: 0.7em !important;
+        padding: 10px !important;
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
+
+    .projectcard {
+        align-items: center !important;
+        padding: 15px !important;
+        margin-top: -12px !important; 
+        padding-top: 8px !important;
+    }
+
+    #fronttagsview {
+        justify-content: center !important;
+        gap: 2.5px !important;
+    }
+    
+    #tagsview {
+        justify-content: center !important;
+        gap: 2.5px !important;
+    }
 }
+
 
 @keyframes open {
     from {
@@ -442,7 +556,7 @@ main {
 }
 
 .winbutton {
-    height: 30px;
+    height: 28px;
     width: auto;
     margin-top: -4px;
     cursor: pointer;
@@ -457,7 +571,7 @@ main {
 .cardheader {
     background-color: #aca8d1ef;
     position: relative;
-    height: 40px;
+    height: 38px;
     padding: 2px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -925,12 +1039,23 @@ a:hover {
 
 #rv {
     position: absolute;
-    margin-left: 20px;
-    margin-top: 25px;
+    /* margin-left: 20px; */
+    margin-top: -25px;
+}
+
+#blue-gold {
+    position: absolute;
+    /* margin-left: 20px; */
+    margin-top: -25px;
 }
 
 #image {
-    max-width: 100%;
+    max-width: 30vw;
+    max-height: 30vh;
+}
+
+#d-image {
+    max-width: 40vw;
     height: auto;
 }
 
@@ -1019,6 +1144,29 @@ li {
 }
 
 #viewProject:hover {
+    background-color: rgba(218, 239, 248, 0.658);
+    color: rgba(69, 67, 83, 0.877);
+    transform: translate(0, -3px);
+}
+
+#viewDesign {
+
+    border: 3px solid rgba(115, 104, 177, 0);
+    background-color: #ecf7ff;
+    color: rgba(69, 67, 83, 0.849);
+    padding: 8px;
+    font-family: Work Sans;
+    font-weight: 500;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 13px;
+    border-radius: 20px;
+    transition: 0.3s;
+    margin-top: -3px;
+    margin-bottom: 10px;
+}
+
+#viewDesign:hover {
     background-color: rgba(218, 239, 248, 0.658);
     color: rgba(69, 67, 83, 0.877);
     transform: translate(0, -3px);
