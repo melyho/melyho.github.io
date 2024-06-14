@@ -62,3 +62,25 @@ function closeCard(cardId) {
 function openLinkInNewTab(url) {
   window.open(url, '_blank');
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const modal = document.getElementById('my-modal');
+  const modalImage = document.getElementById('modalImage');
+  const span = document.getElementsByClassName('close')[0];
+
+  window.openModal = function(div) {
+      const imageSrc = div.getAttribute('data-image');
+      modalImage.src = imageSrc;
+      modal.style.display = 'block';
+  }
+
+  span.onclick = function() {
+      modal.style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = 'none';
+      }
+  }
+});
