@@ -374,6 +374,9 @@ main {
         margin-top: 0px;
     }
 
+    header {
+        text-align: center;
+    }
     .modal-image {
         max-width: 100vw !important;
         height: auto !important;
@@ -403,6 +406,7 @@ main {
     .projectname {
         text-align: center;
         font-size: 1.2em;
+        margin-bottom: 8.5px;
     }
 
     #desc {
