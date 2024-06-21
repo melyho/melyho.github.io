@@ -362,7 +362,7 @@ main {
 
 }
 
-@media only screen and (max-width: 640px) {
+@media screen and (max-width: 640px) {
     main {
         flex: 1;
         display: flex;
